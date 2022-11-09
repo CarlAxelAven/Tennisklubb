@@ -4,8 +4,13 @@
 	<title>Tennisklubb</title>
 	<link rel="stylesheet" type="text/css" href="tenniscss.css">
 	<script>
+		function spara() {
+			var datum = getElementById("datum");
+			var tid = get ElementById("time");
+			var
+		}
 			function kalender() {
-				document.getElementById("bodystuffing").innerHTML = "Kalender grejsilimojs";
+				document.getElementById("bodystuffing").innerHTML = "Kalender grejsilimojs. Du har ansökt om att spela kl." + ;
 
 		}
         function banor() {
@@ -40,7 +45,7 @@
 	<div id="kalender">
 		<form>
 			<label for="datum">Datum</label>
-			<input name="datum" type="date" id="datum">
+			<input name="datum" type="date" id="datum" required>
 			<br>Du kan boka en timme åt gången<br>
 			<label for="time">Timslag</label>
 			<select name="time" id="time" required>
@@ -54,6 +59,7 @@
 				<option value="14">14:00</option>
 				<option value="15">15:00</option>
 				<option value="16">16:00</option>
+				<button type="button" value="Submit" onclick="kalender() + spara()">
 			</select>
 		</form>
 	</div>
