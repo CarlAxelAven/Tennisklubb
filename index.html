@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Tennisklubb</title>
-		<link rel="stylesheet" type="text/css" href="tenniscss.css">
-	</head>
-	<body>
-		<div id="header">
-			<a>Huvudsida</a>
-			<a href="kalender.html">Kalender</a>
-			<a href="infobana.html">Information om banor</a>
-			<a href="omkl.html">Omklädningsrum</a>
-			<a href="bastu.html">Bastu</a>
-		</div>
-		<br>
-		<div id="bodystuffing">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-			incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-			irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-			pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<head>
+	<title>Tennisklubb</title>
+	<link rel="stylesheet" type="text/css" href="tenniscss.css">
+	<script>
+			function kalender() {
+				document.getElementById("bodystuffing").innerHTML = "Kalender grejsilimojs";
 
-		</div>
-	</body>
+		}
+        function banor() {
+            document.getElementById("bodystuffing").innerHTML = "Banor grejsilimojs";
+        }
+        function omkl() {
+            document.getElementById("bodystuffing").innerHTML = "Omklädningsrum grejsilimojs";
+        }
+        function bastu() {
+            document.getElementById("bodystuffing").innerHTML = "Bastu grejsilimojs";
+        }
+
+	</script>
+</head>
+<body>
+	<div id="header">
+		<a>Huvudsida</a>
+		<button type="button" onclick="kalender()">Kalender</button>
+		<button type="button" onclick="banor()">Banor</button>
+		<button type="button" onclick="omkl()">Omklädningsrum</button>
+		<button type="button" onclick="bastu()">Bastu</button>
+	</div>
+	<br>
+	<div id="bodystuffing">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+		exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+		irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<br />
+	</div>
+	<div id="kalender">
+		<form>
+			<label for="datum">Datum</label>
+			<input name="datum" type="date" id="datum">
+			<br>Du kan boka en timme åt gången<br>
+			<label for="time">Timslag</label>
+			<select name="time" id="time" required>
+				<option value="07">07:00</option>
+				<option value="08">08:00</option>
+				<option value="09">09:00</option>
+				<option value="10">10:00</option>
+				<option value="11">11:00</option>
+				<option value="12">12:00</option>
+				<option value="13">13:00</option>
+				<option value="14">14:00</option>
+				<option value="15">15:00</option>
+				<option value="16">16:00</option>
+			</select>
+		</form>
+	</div>
+</body>
 </html>

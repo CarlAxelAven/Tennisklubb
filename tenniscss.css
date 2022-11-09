@@ -16,8 +16,20 @@ padding-bottom: 20px;
 width:  960px;
 background-color:  white;
 margin: auto;
-border:  solid 2px grey;
+border-top:  solid 2px grey;
+border-left: solid 2px grey;
+border-right: solid 2px grey;
 padding-left: 10px;
 padding-right: 10px;
 padding-bottom: 20px;
+}
+#kalender {
+	width: 960px;
+	background-color: white;
+	margin: auto;
+	border-left: solid 2px grey;
+	border-right: solid 2px grey;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
 }
