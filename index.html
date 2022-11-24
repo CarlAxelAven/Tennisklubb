@@ -6,10 +6,13 @@
 	<title>Tennisklubb</title>
 	<link rel="stylesheet" type="text/css" href="tenniscss.css">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	<script src="Script1.js"></script>
-	<script>
-		var bana = addEventListener
-	</script>
+	<!-- <script type="text/javascript">
+		let bana = addEventListener;
+	</script> -->
 </head>
 <body>
 	<div id="header">
@@ -59,6 +62,7 @@
 					<label for="graes">Gräsdubbelbana</label>
 					<input name="valavbana" type="radio" id="graes" value="dubbelgräs"><br />
 				<button type="button" id="button2" onclick="spara(); bokomkl(); omkl();">Nästa</button>
+				<!--spara()--> 
 			</div>
 			<div id="omkl" hidden="hidden">
 
@@ -66,6 +70,25 @@
 			<div id="bastu" hidden="hidden"></div>
 
 		</form>
+		<!-- <script>
+			const button2 = document.querySelector('#button2');
+	const radioButtons = document.querySelectorAll('input[name="valavbana"]');
+//	console.log(radioButtons);
+	button2.addEventListener("click", () => {
+		let bana;
+		for (const radioButton of radioButtons) {
+			if (radioButton.checked) {
+				bana = radioButton.value;
+				console.log(bana)
+				break;
+			}
+		}
+		console.log(bana)
+		console.log()
+		console.log()
+	})
+	
+		</script> -->
 	</div>
 </body>
 </html>

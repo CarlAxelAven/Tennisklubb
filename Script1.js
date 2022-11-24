@@ -5,23 +5,28 @@ function spara() {
 	var tid = document.getElementById("time").value;
 	const button2 = document.querySelector('#button2');
 	const radioButtons = document.querySelectorAll('input[name="valavbana"]');
-	button2.addEventListener("click", () => {
-		let bana;
-		for (const radioButton of radioButtons) {
-			if (radioButton.checked) {
-				bana = radioButton.value;
-				break;
-			}
-		}
-	})
-	console.log(tid)
-	console.log(datum)
-	console.log(bana)
+ button2.addEventListener("click", () => {
+ 	let bana;
+ 	for (const radioButton of radioButtons) {
+ 		if (radioButton.checked) {
+			bana = radioButton.value;
+			
+	 console.log(tid)
+	 console.log(datum)
+	 console.log(bana)
+			break;
+ 		}
+ 	}
+	
+ })
+// 	console.log(tid)
+// 	console.log(datum)
+// 	console.log(bana)
 
 }
 function kalender() {
 
-	document.getElementById("top").innerHTML = "Kalender grejsilimojs. Du har ansökt om att spela kl." + tid + ".00 den ";
+	document.getElementById("top").innerHTML = "Kalender grejsilimojs. Du har ansï¿½kt om att spela kl." + tid + ".00 den ";
 
 }
 function banor() {
@@ -40,7 +45,7 @@ function bokbastu() {
 	document.getElementById("button3").hidden = "hidden";
 }
 function omkl() {
-	document.getElementById("top").innerHTML = "Omklädningsrum grejsilimojs";
+	document.getElementById("top").innerHTML = "Omklï¿½dningsrum grejsilimojs";
 }
 function bastu() {
 	document.getElementById("top").innerHTML = "Bastu grejsilimojs";
