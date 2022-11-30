@@ -33,6 +33,9 @@
 		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		<br />
 	</div>
+	<!-- Div där man kan boka en tennisbana. Alla former man ska fylla i visas inte.
+	Först visas datum och tid man skulle vilja boka. När man trycker på knappen id="button1" så tas
+    hidden tagen bort från nästa div i bokningsprocessen-->
 	<div id="bottom">
 		<form>
 			<label for="datum">Datum</label>
@@ -61,15 +64,17 @@
 					<input name="valavbana" type="radio" id="dubbel" value="dubbel"><br />
 					<label for="graes">Gräsdubbelbana</label>
 					<input name="valavbana" type="radio" id="graes" value="dubbelgräs"><br />
-				<button type="button" id="button2" onclick="spara(); bokomkl(); omkl();">Nästa</button>
+				<button type="button" id="button2" onclick="bokomkl(); omkl();">Nästa</button>
 				<!--spara()--> 
 			</div>
 			<div id="omkl" hidden="hidden">
-
+                <button type="button" id="button3">Nästa</button>
+				<p>Hur många skåp vill du hyra? Vi erbjuder omklädningsrum för män och kvinnor och har även privata omklädningsrum för grupper upp till åtta.</p>
 			</div>
 			<div id="bastu" hidden="hidden"></div>
 
 		</form>
+		<button type="button" onclick="checking()">checka in</button>
 		<!-- <script>
 			const button2 = document.querySelector('#button2');
 	const radioButtons = document.querySelectorAll('input[name="valavbana"]');
