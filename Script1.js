@@ -65,7 +65,7 @@ function bokbastu() {
 }
 function omkl() {
 
-	document.getElementById("top").innerHTML = "Omkl�dningsrum grejsilimojs";
+	document.getElementById("top").innerHTML = "Omklädningsrum grejsilimojs";
 }
 function bastu() {
 	document.getElementById("top").innerHTML = "Bastu grejsilimojs";
