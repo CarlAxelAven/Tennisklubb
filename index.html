@@ -65,13 +65,22 @@
 					<label for="graes">Gräsdubbelbana</label>
 					<input name="valavbana" type="radio" id="graes" value="dubbelgräs"><br />
 				<button type="button" id="button2" onclick="bokomkl(); omkl();">Nästa</button>
-				<!--spara()--> 
 			</div>
 			<div id="omkl" hidden="hidden">
                 <button type="button" id="button3">Nästa</button>
-				<p>Hur många skåp vill du hyra? Vi erbjuder omklädningsrum för män och kvinnor och har även privata omklädningsrum för grupper upp till åtta.</p>
+				<p>Hur många skåp vill du hyra? Vi erbjuder skåp i omklädningsrum för antingen män och kvinnor och har även privata omklädningsrum för grupper upp till åtta.</p>
+                <input type="text" id="man">
+				<label for="man">Skåp i omklädningsrummet för män. 15kr/skåp</label><br>
+                <input type="text" id="woman">
+				<label for="woman">Skåp i omklädningsrummet för kvinnor 15kr/skåp</label><br>
+				<input type="text" id="privat">
+				<label for="privat">Privata omklädningsrum med åtta skåp 120kr/omklädningsrum</label>
+				<button type="button" id="button3" onclick="">Nästa</button>
 			</div>
-			<div id="bastu" hidden="hidden"></div>
+
+			<div id="bastu" hidden="hidden">
+
+			</div>
 
 		</form>
 		<button type="button" onclick="checking()">checka in</button>
