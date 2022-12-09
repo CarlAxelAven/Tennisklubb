@@ -1,3 +1,4 @@
+<!--Huvuddelen av webbsidan, om allt går väl så kommer det vara den enda sidan som användaren interagerar med-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,17 @@
 	<title>Tennisklubb</title>
 	<link rel="stylesheet" type="text/css" href="tenniscss.css">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	<script src="Script1.js"></script>
+	<!-- <script type="text/javascript">
+		let bana = addEventListener;
+	</script> -->
 </head>
 <body>
 	<div id="header">
+		<!--Byter texten direkt på sidan, gör att om man bokar och vill kolla en sak samtidigt så tappar man inte bokningsprocessen-->
 		<a>Huvudsida</a>
 		<button type="button" onclick="kalender()">Kalender</button>
 		<button type="button" onclick="banor()">Banor</button>
@@ -16,7 +24,8 @@
 		<button type="button" onclick="bastu()">Bastu</button>
 	</div>
 	<br>
-	<div id="bodystuffing">
+	<!--Där scripten byter texter, ska försöka få in bilder-->
+	<div id="top">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
 		exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -24,7 +33,10 @@
 		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		<br />
 	</div>
-	<div id="kalender">
+	<!-- Div där man kan boka en tennisbana. Alla former man ska fylla i visas inte.
+	Först visas datum och tid man skulle vilja boka. När man trycker på knappen id="button1" så tas
+    hidden tagen bort från nästa div i bokningsprocessen-->
+	<div id="bottom">
 		<form>
 			<label for="datum">Datum</label>
 			<input name="datum" type="date" id="datum" required>
@@ -33,7 +45,7 @@
 			<select name="time" id="time" required>
 				<option value="07">07:00</option>
 				<option value="08">08:00</option>
-				<option value="09">09:00</option>a
+				<option value="09">09:00</option>
 				<option value="10">10:00</option>
 				<option value="11">11:00</option>
 				<option value="12">12:00</option>
@@ -41,13 +53,47 @@
 				<option value="14">14:00</option>
 				<option value="15">15:00</option>
 				<option value="16">16:00</option>
-				
+
 			</select>
-			<div id="banor"></div>
-			<div id="omkl"></div>
-			<div id="bastu"></div>
-			<button type="button" value="Submit" onclick="spara(); banor();">
+			<button type="button" id="button1" onclick="banor(); bokbana();">Nästa</button>
+			<div id="banor" hidden="hidden">
+				<p>Du kan bara boka en bana åt gången</p>
+					<label for="singel">Singelbana</label>
+					<input name="valavbana" type="radio" id="singel" value="singel"><br>
+					<label for="dubbel">Dubbelbana</label>
+					<input name="valavbana" type="radio" id="dubbel" value="dubbel"><br />
+					<label for="graes">Gräsdubbelbana</label>
+					<input name="valavbana" type="radio" id="graes" value="dubbelgräs"><br />
+				<button type="button" id="button2" onclick="bokomkl(); omkl();">Nästa</button>
+				<!--spara()--> 
+			</div>
+			<div id="omkl" hidden="hidden">
+                <button type="button" id="button3">Nästa</button>
+				<p>Hur många skåp vill du hyra? Vi erbjuder omklädningsrum för män och kvinnor och har även privata omklädningsrum för grupper upp till åtta.</p>
+			</div>
+			<div id="bastu" hidden="hidden"></div>
+
 		</form>
+		<button type="button" onclick="checking()">checka in</button>
+		<!-- <script>
+			const button2 = document.querySelector('#button2');
+	const radioButtons = document.querySelectorAll('input[name="valavbana"]');
+//	console.log(radioButtons);
+	button2.addEventListener("click", () => {
+		let bana;
+		for (const radioButton of radioButtons) {
+			if (radioButton.checked) {
+				bana = radioButton.value;
+				console.log(bana)
+				break;
+			}
+		}
+		console.log(bana)
+		console.log()
+		console.log()
+	})
+	
+		</script> -->
 	</div>
 </body>
 </html>
