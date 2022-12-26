@@ -14,11 +14,11 @@
 		let bana = addEventListener;
 	</script> -->
 </head>
-<body>
+<body onload="document.getElementById('index').style.backgroundColor = 'Red'">
 	<div id="header">
 		<!--Byter texten direkt på sidan, gör att om man bokar och vill kolla en sak samtidigt så tappar man inte bokningsprocessen-->
-		<a>Huvudsida</a>
-		<button type="button" onclick="kalender()">Kalender</button>
+		
+		<button type="button" id="index">index</button>
 		<button type="button" onclick="banor()">Banor</button>
 		<button type="button" onclick="omkl()">Omklädningsrum</button>
 		<button type="button" onclick="bastu()">Bastu</button>
@@ -37,9 +37,9 @@
 	Först visas datum och tid man skulle vilja boka. När man trycker på knappen id="button1" så tas
     hidden tagen bort från nästa div i bokningsprocessen-->
 	<div id="bottom">
-		<form>
-			<label for="datum">Datum</label>
-			<input name="datum" type="date" id="datum" required>
+		<form action="./banor.html" method="GET">
+			<label for="date">Datum</label>
+			<input name="date" type="date" id="date" required>
 			<br>Du kan boka en timme åt gången<br>
 			<label for="time">Timslag</label>
 			<select name="time" id="time" required>
@@ -55,8 +55,9 @@
 				<option value="16">16:00</option>
 
 			</select>
+			<button type="submit" value="boka">boka</button>
 			<button type="button" id="button1" onclick="banor(); bokbana();">Nästa</button>
-			<div id="banor" hidden="hidden">
+			<!-- <div id="banor" hidden="hidden">
 				<p>Du kan bara boka en bana åt gången</p>
 					<label for="singel">Singelbana</label>
 					<input name="valavbana" type="radio" id="singel" value="singel"><br>
@@ -65,7 +66,7 @@
 					<label for="graes">Gräsdubbelbana</label>
 					<input name="valavbana" type="radio" id="graes" value="dubbelgräs"><br />
 				<button type="button" id="button2" onclick="bokomkl(); omkl();">Nästa</button>
-			</div>
+			</div> -->
 			<div id="omkl" hidden="hidden">
                 <button type="button" id="button3">Nästa</button>
 				<p>Hur många skåp vill du hyra? Vi erbjuder skåp i omklädningsrum för antingen män och kvinnor och har även privata omklädningsrum för grupper upp till åtta.</p>
@@ -75,7 +76,7 @@
 				<label for="woman">Skåp i omklädningsrummet för kvinnor 15kr/skåp</label><br>
 				<input type="text" id="privat">
 				<label for="privat">Privata omklädningsrum med åtta skåp 120kr/omklädningsrum</label>
-				<button type="button" id="button3" onclick="">Nästa</button>
+				<button type="button" id="button3" onclick="omklcheck(); ">Nästa</button>
 			</div>
 
 			<div id="bastu" hidden="hidden">

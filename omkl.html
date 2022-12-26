@@ -1,0 +1,81 @@
+<!--Huvuddelen av webbsidan, om allt går väl så kommer det vara den enda sidan som användaren interagerar med-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tennisklubb</title>
+	<link rel="stylesheet" type="text/css" href="tenniscss.css">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<script src="Script1.js"></script>
+	<!-- <script type="text/javascript">
+		let bana = addEventListener;
+	</script> -->
+</head>
+<body onload="document.getElementById('date-placeholder').value = findGetParameter('date'); document.getElementById('time-placeholder').value = findGetParameter('time'); 
+document.getElementById('bana-placeholder').value = findGetParameter('valavbana'); document.getElementById('omkl').style.backgroundColor = 'Red'">
+	<div id="header">
+		<!--Byter texten direkt på sidan, gör att om man bokar och vill kolla en sak samtidigt så tappar man inte bokningsprocessen-->
+		<a>Huvudsida</a>
+		<button type="button">Kalender</button>
+		<button type="button" >Banor</button>
+		<button type="button" id="omkl">Omklädningsrum</button>
+		<button type="button">Bastu</button>
+	</div>
+	<br>
+	<!--Där scripten byter texter, ska försöka få in bilder-->
+	<div id="top">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+		exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+		irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<br />
+	</div>
+	<!-- Div där man kan boka en tennisbana. Alla former man ska fylla i visas inte.
+	Först visas datum och tid man skulle vilja boka. När man trycker på knappen id="button1" så tas
+    hidden tagen bort från nästa div i bokningsprocessen-->
+	<div id="bottom">
+		<form action="./banor.html" method="GET">
+			
+			<div id="omkl">
+                <button type="button" id="button3">Nästa</button>
+				<p>Hur många skåp vill du hyra? Vi erbjuder skåp i omklädningsrum för antingen män och kvinnor och har även privata omklädningsrum för grupper upp till åtta.</p>
+                <input type="text" id="man">
+				<label for="man">Skåp i omklädningsrummet för män. 15kr/skåp</label><br>
+                <input type="text" id="woman">
+				<label for="woman">Skåp i omklädningsrummet för kvinnor 15kr/skåp</label><br>
+				<input type="text" id="privat">
+				<label for="privat">Privata omklädningsrum med åtta skåp 120kr/omklädningsrum</label>
+			</div>
+
+			<input name="date" id="date-placeholder" hidden>
+			<input name="time" id="time-placeholder" hidden>	
+			<input name="bana" id="bana-placeholder" hidden>
+
+		</form>
+		<button type="button" onclick="checking()">checka in</button>
+		<!-- <script>
+			const button2 = document.querySelector('#button2');
+	const radioButtons = document.querySelectorAll('input[name="valavbana"]');
+//	console.log(radioButtons);
+	button2.addEventListener("click", () => {
+		let bana;
+		for (const radioButton of radioButtons) {
+			if (radioButton.checked) {
+				bana = radioButton.value;
+				console.log(bana)
+				break;
+			}
+		}
+		console.log(bana)
+		console.log()
+		console.log()
+	})
+	
+		</script> -->
+	</div>
+</body>
+</html>

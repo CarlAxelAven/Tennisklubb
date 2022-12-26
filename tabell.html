@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tennisklubb</title>
+    <link rel="stylesheet" type="text/css" href="tenniscss.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="Script1.js"></script>
+    <script>
+        function load() {
+            if (findGetParameter("m8") == "on") {
+                document.getElementById("m8").innerHTML = "Bokad";
+            }
+            if (findGetParameter("t8") == "on") {
+                document.getElementById("t8").innerHTML = "Bokad";
+            }
+            if (findGetParameter("o8") == "on") {
+                document.getElementById("o8").innerHTML = "Bokad";
+            }
+            if (findGetParameter("to8") == "on") {
+                document.getElementById("to8").innerHTML = "Bokad";
+            }
+            if (findGetParameter("f8") == "on") {
+                document.getElementById("f8").innerHTML = "Bokad";
+            }
+        }
+    </script>
+</head>
+
+<body onload="load()">
+
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Måndag</th>
+            <th>Tisdag</th>
+            <th>Onsdag</th>
+            <th>Torsdag</th>
+            <th>Fredag</th>
+        </tr>
+        <form>
+            <tr>
+                <td>08-10</td>
+                <td id="m8"><input type="checkbox" name="m8">Boka</input></td>
+                <td id="t8"><input type="checkbox" name="t8">Boka</input></td>
+                <td id="o8"><input type="checkbox" name="o8">Boka</input></td>
+                <td id="to8"><input type="checkbox" name="to8">Boka</input></td>
+                <td id="f8"><input type="checkbox" name="f8">Boka</input></td>
+            </tr>
+            <tr>
+                <input type="submit" value="boka tid">
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>

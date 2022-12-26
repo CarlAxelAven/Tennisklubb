@@ -1,27 +1,6 @@
 // JavaScript source code
 
-//    var datum;
-//    var tid;
-//    let bana; 
-
-function spara() {
-	var datum = document.getElementById("datum").value;
-	var tid = document.getElementById("time").value;
-	const button2 = document.querySelector('#button2');
-	const radioButtons = document.querySelectorAll('input[name="valavbana"]');
- button2.addEventListener("click", () => {
- 	let bana;
- 	for (const radioButton of radioButtons) {
- 		if (radioButton.checked) {
-			bana = radioButton.value;
-			
-			break;
- 		}
- 	}
-	
- })	
-
-}
+const datum = findGetParameter("datum")
 
 function checking () {
 	console.log(tid)
@@ -29,7 +8,18 @@ function checking () {
  	console.log(bana)
 
  }
- 
+ function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
 function kalender() {
 
 	document.getElementById("top").innerHTML = "Kalender grejsilimojs. Du har ans�kt om att spela kl." + tid + ".00 den ";
@@ -69,4 +59,13 @@ function omkl() {
 }
 function bastu() {
 	document.getElementById("top").innerHTML = "Bastu grejsilimojs";
+}
+function omklcheck() {
+	var temp1 = parseInt('man')
+	var temp2 = parseInt('woman')
+	var temp3 = parseInt('privat')
+	if (temp1 == null || temp2 == null || temp3 == null){
+		document.getElementById("top").innerHTML = "aj"
+	}
+
 }
